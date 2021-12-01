@@ -15,7 +15,7 @@ extern  clock
 extern  InContainer
 extern  InRndContainer
 extern  OutContainer
-extern  RealAverage
+extern  ContainerRealAverage
 
 ;-------------------------------------------------------------
 ; Вывод строки символов из буфера
@@ -101,12 +101,21 @@ extern  RealAverage
 %endmacro
 
 ;-------------------------------------------------------------
-; Вычисление суммы периметров фигур в контейнере
+; Вычисление суммы вещественных значений чисел в контейнере
 %macro  ContainerAverage    3
     mov     rdi, %1
     mov     rsi, %2
-    call    RealAverage
+    call    ContainerRealAverage
     movsd   %3, xmm0
+%endmacro
+
+;-------------------------------------------------------------
+; Удаление чисел контейнера
+%macro  DeleteContainerNumbers    3
+    mov     rdi, %1
+    mov     rsi, %2
+    movsd   xmm0, %3
+    call    DeleteContainerElements
 %endmacro
 
 ;-------------------------------------------------------------

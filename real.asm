@@ -4,7 +4,9 @@
 
 extern COMPLEX
 extern FRACTION
-extern POLAR
+extern POLAR        
+
+extern printf
 
 ;-------------------------------------------------------
 ; Вычисление вещественного значения комплексного числа
@@ -17,12 +19,12 @@ mov rbp, rsp
 
     ; В rdi адрес комплексного числа
     mov eax, [rdi]
-    mul eax, eax                 ; x*x
+    imul eax, eax                 ; x*x
     mov ecx, [rdi+4]
-    mul ecx, ecx                 ; y*y
-    add eax, ecx                 ; x*x+y*y
-    sqrtsd eax, eax              ; sqrt(x*x+y*y)
-    cvtsi2sd    xmm0, eax
+    imul ecx, ecx                 ; y*y
+    add eax, ecx 
+    cvtsi2sd xmm0, eax            ; x*x+y*y
+    sqrtsd xmm0, xmm0             ; sqrt(x*x+y*y)
 
 leave
 ret
@@ -38,8 +40,10 @@ mov rbp, rsp
 
     ; В rdi адрес дроби
     mov eax, [rdi]              ; числитель
-    sub eax, [rdi+4]            ; числитель / знаменатель
+    mov edx, [rdi+4]
     cvtsi2sd    xmm0, eax
+    cvtsi2sd    xmm1, edx  
+    divsd xmm0, xmm1                ; числитель / знаменатель
 
 leave
 ret
@@ -101,39 +105,40 @@ ret
 ;-----------------------------------------------------------------------
 ; Вычисление среднего вещественного значения всхе числе в контейнере
 ;-----------------------------------------------------------------------
-global RealAverage
-RealAverage:
+global ContainerRealAverage
+ContainerRealAverage:
 section .data
-    .sum    dq  0.0
+    .sum    dq  0.0   
 section .text
 push rbp
 mov rbp, rsp
 
     ; В rdi адрес начала контейнера
-    mov ebx, esi            ; количество чисел
-    xor ecx, ecx            ; счетчик чисел
-    movsd xmm2, [.sum]     ; перенос накопителя суммы в регистр 2
+    mov     ebx, esi        ; число фигур
+    xor     ecx, ecx        ; счетчик фигур
+    movsd   xmm2, [.sum]    ; перенос накопителя суммы в регистр 2
+
 .loop:
-    cmp ecx, ebx            ; проверка на окончание цикла
-    jge .return             ; Перебрали все числа
-    
+    cmp     ecx, ebx        ; проверка на окончание цикла
+    jge     .return         ; перебрали все фигуры
+
     push rbx
     push rcx
 
-    mov r10, rdi            ; сохранение начала числа
-    call RealNumber         ; Получение периметра первого числа
-    addsd xmm2, xmm0        ; накопление суммы
-    
-    pop rbx
+    mov     r10, rdi        ; сохранение начала фигуры
+    call    RealNumber  ; получение периметра фигуры
+    addsd   xmm2, xmm0      ; накопление суммы периметров
+
     pop rcx
-    inc ecx                 ; индекс следующего числа
-    
-    add r10, 32 ;16             ; адрес следующего числа
-    mov rdi, r10            ; восстановление для передачи параметра
-    jmp .loop
+    pop rbx
+    inc ecx
+
+    add     r10, 32         ; адрес следующей фигуры
+    mov     rdi, r10        ; восстановление для передачи параметра
+    jmp     .loop
 .return:
-    cvtsd2sd xmm1, ebx
-    divsd xmm2, xmm1
-    movsd xmm0, xmm2
+    cvtsi2sd    xmm1, ebx
+    divsd   xmm2, xmm1
+    movsd   xmm0, xmm2
 leave
 ret

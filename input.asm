@@ -1,6 +1,7 @@
 ; file.asm - использование файлов в NASM
 extern printf
 extern fscanf
+extern fprintf
 
 extern COMPLEX
 extern FRACTION
@@ -154,7 +155,7 @@ mov rbp, rsp
     mov     rsi, [.FILE]
     call    InFraction
     mov     rax, 1  ; Код возврата - true
-    jmp     return
+    jmp     .return
 .polIn:
     ; Ввод полярной координаты
     mov     rdi, [.pnum]

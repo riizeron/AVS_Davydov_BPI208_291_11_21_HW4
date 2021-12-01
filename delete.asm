@@ -52,7 +52,7 @@ mov rbp, rsp
     jl     .delete
     jmp    .countNewLength
 
-.nextShape:
+.nextNumber:
     pop rcx
     pop rbx
     inc ecx

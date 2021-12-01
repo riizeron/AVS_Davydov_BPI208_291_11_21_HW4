@@ -75,7 +75,7 @@ mov rbp, rsp
     call    Random
     mov     rbx, [.pfrac]
     mov     [rbx], eax
-.repeat
+.repeat:
     call    Random
     mov     rbx, [.pfrac]
     mov     [rbx+4], eax
@@ -103,12 +103,12 @@ mov rbp, rsp
     call    Random
     mov     rbx, [.ppol]
     mov     [rbx+4], eax    ; угол
-.repeat
+.repeat:
     call    Random
     mov     rbx, [.ppol]
     mov     [rbx], eax
     mov     ebx, eax        ; радиус
-    сmp     ebx, 0          ; проверка на отрицательность радиуса
+    cmp     ebx, 0          ; проверка на отрицательность радиуса
     js      .repeat
 
 leave
@@ -148,7 +148,7 @@ mov rbp, rsp
     mov     rdi, [.pnum]
     mov     [rdi], eax      ; запись ключа в фигуру
     cmp eax, [COMPLEX]
-    je .compInrnd
+    je .compInRnd
     cmp eax, [FRACTION]
     je .fracInRnd
     cmp eax, [POLAR]

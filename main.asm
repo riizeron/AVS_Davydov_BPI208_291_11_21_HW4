@@ -8,6 +8,10 @@ global  COMPLEX
 global  FRACTION
 global  POLAR
 
+extern InRndContainer
+extern DeleteContainerElements
+extern ContainerRealAverage
+
 %include "macros.mac"
 
 section .data
@@ -78,7 +82,7 @@ mov rbp,rsp
     mov rsi, [r13+8]    ; второй аргумент командной строки
     call strcmp
     cmp rax, 0
-    je .fillRnd
+    je .next2
     mov rdi, fileGen
     mov rsi, [r13+8]
     call strcmp
@@ -87,14 +91,14 @@ mov rbp,rsp
     PrintStrBuf errMessage2, [stdout]
     jmp .return
     
-.fillRnd:
+.next2:
     ; Генерация случайных чисел
     mov rdi, [r13+16]
     call atoi
     mov [num], eax
     mov eax, [num]
     cmp eax, 1
-    j1 .fall1
+    jl .fall1
     cmp eax, 10000
     jg .fall1
 
@@ -110,7 +114,7 @@ mov rbp,rsp
     mov     rsi, len    ; передача адреса для длины
     mov     edx, [num]  ; передача количества порождаемых фигур
     call    InRndContainer
-    jmp .checkLen
+    jmp     .checkLen
 
 .next3:
     ; Получение фигур из файла
@@ -124,7 +128,13 @@ mov rbp,rsp
     FileClose [ifst]
     jmp .checkLen
 
-.checkLen
+.checkLen:
+    mov     eax, [len]
+    cmp     eax, 1
+    jl      .fall1
+    cmp     eax, 10000
+    jg      .fall1
+    jmp     .task2
 
 .task2:
     ; Вывод содержимого контейнера
@@ -136,14 +146,11 @@ mov rbp,rsp
     PrintContainer cont, [len], [ofst1]
     FileClose [ofst1]
 
-    ; Вычисление времени старта
-    mov rax, 228   ; 228 is system call for sys_clock_gettime
-    xor edi, edi   ; 0 for system clock (preferred over "mov rdi, 0")
-    lea rsi, [startTime]
-    syscall        ; [time] contains number of seconds
-                   ; [time + 8] contains number of nanoseconds
-
-    ContainerAverage cont, [len], [sum]
+.deleteElemsFromCont:
+    
+    ContainerAverage cont, [len], [averageReal]
+    DeleteContainerNumbers cont, [len], [averageReal]
+    mov [len], rsi
 
     ; Вычисление времени завершения
     mov rax, 228   ; 228 is system call for sys_clock_gettime
@@ -152,6 +159,8 @@ mov rbp,rsp
     syscall        ; [time] contains number of seconds
                    ; [time + 8] contains number of nanoseconds
 
+
+    
     ; Получение времени работы
     mov rax, [endTime]
     sub rax, [startTime]
@@ -167,26 +176,33 @@ mov rbp,rsp
     mov [deltaTime], rax
     mov [deltaTime+8], rbx
 
-    ; Вывод периметра нескольких чисел
-    PrintStr "Average real = ", [stdout]
-    PrintDouble [sum], [stdout]
-    PrintStr ". Calculaton time = ", [stdout]
-    PrintLLUns [deltaTime], [stdout]
-    PrintStr " sec, ", [stdout]
-    PrintLLUns [deltaTime+8], [stdout]
-    PrintStr " nsec", [stdout]
-    PrintStr 10, [stdout]
+    ; Вывод вещественного значения нескольких чисел
+    PrintStrLn  "", [stdout]
+    PrintStrLn  "Container after deleting numbers:", [stdout]
+    PrintContainer cont, [len], [stdout]
+    PrintStrLn  "", [stdout]
+    PrintStr    "Average real = ", [stdout]
+    PrintDouble [averageReal], [stdout]
+    PrintStr    ". Calculaton time = ", [stdout]
 
-    FileOpen [r13+32], "w", ofst2
-    PrintStr  "Average real = ", [ofst2]
-    PrintDouble [sum], [ofst2]
-    PrintStr ". Calculaton time = ", [ofst2]
-    PrintLLUns [deltaTime], [ofst2]
-    PrintStr " sec, ", [ofst2]
-    PrintLLUns [deltaTime+8], [ofst2]
-    PrintStr " nsec", [ofst2]
-    PrintStr 10, [ofst2]
-    FileClose [ofst2]
+    PrintLLUns  [deltaTime], [stdout]
+    PrintStr    " sec, ", [stdout]
+    PrintLLUns  [deltaTime+8], [stdout]
+    PrintStr    " nsec", [stdout]
+    PrintStr    10, [stdout]
+
+    FileOpen    [r13+32], "w", ofst2
+    PrintStrLn  "Container after deleting numbers:", [ofst2]
+    PrintContainer cont, [len], [ofst2]
+    PrintStr    "Average real = ", [ofst2]
+    PrintDouble [averageReal], [ofst2]
+    PrintStr    ". Calculaton time = ", [ofst2]
+    PrintLLUns  [deltaTime], [ofst2]
+    PrintStr    " sec, ", [ofst2]
+    PrintLLUns  [deltaTime+8], [ofst2]
+    PrintStr    " nsec", [ofst2]
+    PrintStr    10, [ofst2]
+    FileClose   [ofst2]
 
     PrintStrLn "Stop", [stdout]
     jmp .return

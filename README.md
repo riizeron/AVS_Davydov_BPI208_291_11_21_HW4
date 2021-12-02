@@ -34,7 +34,7 @@ Converting each value to a real number equivalent to the written one. For exampl
 ### Functional
 
 _After placing the data in the container, it is necessary to process it in accordance with the task variant.
-The processed data are then entered into a separate result file.
+The processed data are then entered into a separate result file._
 
 Remove from the container those elements for which the value obtained using the function common to all alternatives is less than
 the arithmetic mean for all elements of the container, obtained using the same function. Move other elements to the beginning

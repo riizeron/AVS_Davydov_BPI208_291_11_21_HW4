@@ -114,26 +114,26 @@ push rbp
 mov rbp, rsp
 
     ; В rdi адрес начала контейнера
-    mov     ebx, esi        ; число фигур
-    xor     ecx, ecx        ; счетчик фигур
+    mov     ebx, esi        ; число чисел
+    xor     ecx, ecx        ; счетчик чисел
     movsd   xmm2, [.sum]    ; перенос накопителя суммы в регистр 2
 
 .loop:
     cmp     ecx, ebx        ; проверка на окончание цикла
-    jge     .return         ; перебрали все фигуры
+    jge     .return         ; перебрали все числа
 
     push rbx
     push rcx
 
-    mov     r10, rdi        ; сохранение начала фигуры
-    call    RealNumber  ; получение периметра фигуры
-    addsd   xmm2, xmm0      ; накопление суммы периметров
+    mov     r10, rdi        ; сохранение начала числа
+    call    RealNumber      ; получение периметра числа
+    addsd   xmm2, xmm0      ; накопление суммы вещественных значений
 
     pop rcx
     pop rbx
     inc ecx
 
-    add     r10, 32         ; адрес следующей фигуры
+    add     r10, 32         ; адрес следующего числа
     mov     rdi, r10        ; восстановление для передачи параметра
     jmp     .loop
 .return:

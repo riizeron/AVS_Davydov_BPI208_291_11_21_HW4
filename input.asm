@@ -138,6 +138,8 @@ mov rbp, rsp
     je .fracIn
     cmp eax, [POLAR]
     je .polIn
+    cmp eax, 0
+    je .EOF
     xor eax, eax                ; Некорректный признак - обнуление кода возврата
     jmp     .return
 .compIn:
@@ -163,6 +165,9 @@ mov rbp, rsp
     mov     rsi, [.FILE]
     call    InPolar
     mov     rax, 1  ; Код возврата - true
+.EOF:
+    mov rax, 4
+    jmp .return
 .return:
 
 leave
@@ -173,6 +178,8 @@ ret
 ;----------------------------------------------------
 global InContainer
 InContainer:
+section .data
+    .errorNum db  "Incorrect number key. Input process will be interrupted.",10,0
 section .bss
     .pcont  resq    1   ; адрес контейнера
     .plen   resq    1   ; адрес для сохранения числа введенных элементов
@@ -188,6 +195,10 @@ mov rbp, rsp
     xor rbx, rbx        ; число чисел = 0
     mov rsi, rdx        ; перенос указателя на файл
 .loop:
+
+    cmp rbx, 10001
+    jge .return
+
     ; сохранение рабочих регистров
     push rdi
     push rbx
@@ -195,16 +206,27 @@ mov rbp, rsp
     mov     rsi, [.FILE]
     mov     rax, 0      ; нет чисел с плавающей точкой
     call    InNumber    ; ввод числа
-    cmp rax, 0          ; проверка успешности ввода
-    jle  .return        ; выход, если признак меньше или равен 0
+    cmp eax, 0
+    jle .printErr
+    cmp eax, 4
+    je .return
+
+    ;cmp rax, 0          ; проверка успешности ввода
+    ;jle  .return        ; выход, если признак меньше или равен 0
 
     pop rbx
+    pop rdi
     inc rbx
 
-    pop rdi
-    add rdi, 16             ; адрес следующего числа
+    add rdi, 32            ; адрес следующего числа
 
     jmp .loop
+    jmp .return
+
+.printErr:
+    mov rdi, .errorNum
+    call printf
+    jmp .return
 .return:
     mov rax, [.plen]    ; перенос указателя на длину
     mov [rax], ebx      ; занесение длины

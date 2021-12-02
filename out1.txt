@@ -1,3 +1,5 @@
 Filled container:
-0: It is Complex: x = 4, y = 18. Real = 18.4391
-1: It is Fraction: a = 16, b = 4. Real = 4
+0: It is Fraction: a = 13, b = 7. Real = 1.85714
+1: It is Fraction: a = 17, b = 4. Real = 4.25
+
+Average real = 3.05357

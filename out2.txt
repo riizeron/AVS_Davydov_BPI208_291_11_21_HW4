@@ -1,3 +1,4 @@
 Container after deleting numbers:
-0: It is Complex: x = 4, y = 18. Real = 18.4391
-Average real = 9.21954. Calculaton time = 0 sec, 7050697 nsec
+0: It is Fraction: a = 17, b = 4. Real = 4.25
+Average real = 3.05357
+. Calculaton time = 0 sec, 9128859 nsec

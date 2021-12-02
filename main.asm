@@ -70,6 +70,7 @@ mov rbp,rsp
     PrintStrBuf errMessage1, [stdout]
     jmp .return
 .start:
+    ; время начала
     mov rax, 228
     xor edi, edi
     lea rsi, [startTime]
@@ -117,7 +118,7 @@ mov rbp,rsp
     jmp     .checkLen
 
 .next3:
-    ; Получение фигур из файла
+    ; Получение чисел из файла
     FileOpen [r13+16], "r", ifst
     ; Заполнение контейнера числами из файла
     mov     rdi, cont           ; адрес контейнера
@@ -137,18 +138,24 @@ mov rbp,rsp
     jmp     .task2
 
 .task2:
+    AverageReal cont, [len], [averageReal]
     ; Вывод содержимого контейнера
     PrintStrLn "Filled container:", [stdout]
     PrintContainer cont, [len], [stdout]
+    PrintStrLn "", [stdout]
+    PrintStr    "Average real = ", [stdout]
+    PrintDouble [averageReal], [stdout]
 
     FileOpen [r13+24], "w", ofst1
     PrintStrLn "Filled container:", [ofst1]
     PrintContainer cont, [len], [ofst1]
+    PrintStrLn "", [ofst1]
+    PrintStr    "Average real = ", [ofst1]
+    PrintDouble [averageReal], [ofst1]
     FileClose [ofst1]
 
 .deleteElemsFromCont:
     
-    ContainerAverage cont, [len], [averageReal]
     DeleteContainerNumbers cont, [len], [averageReal]
     mov [len], rsi
 
@@ -183,8 +190,8 @@ mov rbp,rsp
     PrintStrLn  "", [stdout]
     PrintStr    "Average real = ", [stdout]
     PrintDouble [averageReal], [stdout]
+    PrintStrLn "", [stdout]
     PrintStr    ". Calculaton time = ", [stdout]
-
     PrintLLUns  [deltaTime], [stdout]
     PrintStr    " sec, ", [stdout]
     PrintLLUns  [deltaTime+8], [stdout]
@@ -196,6 +203,7 @@ mov rbp,rsp
     PrintContainer cont, [len], [ofst2]
     PrintStr    "Average real = ", [ofst2]
     PrintDouble [averageReal], [ofst2]
+    PrintStrLn "", [ofst2]
     PrintStr    ". Calculaton time = ", [ofst2]
     PrintLLUns  [deltaTime], [ofst2]
     PrintStr    " sec, ", [ofst2]

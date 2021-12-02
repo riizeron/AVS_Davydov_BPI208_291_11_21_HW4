@@ -96,13 +96,13 @@ extern  ContainerRealAverage
     mov     rdi, %1
     mov     esi, %2
     mov     rdx, %3
-    mov     rax, 0              ; нет чисел с плавающей точкой
+    mov     rax, 1              ; нет чисел с плавающей точкой
     call    OutContainer
 %endmacro
 
 ;-------------------------------------------------------------
 ; Вычисление суммы вещественных значений чисел в контейнере
-%macro  ContainerAverage    3
+%macro  AverageReal    3
     mov     rdi, %1
     mov     rsi, %2
     call    ContainerRealAverage

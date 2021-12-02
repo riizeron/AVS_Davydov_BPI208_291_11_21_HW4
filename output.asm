@@ -135,7 +135,7 @@ mov rbp, rsp
     ; Вывод информации о полярной координате в файл
     mov     rdi, [.FILE]
     mov     rsi, .outfmt        ; Формат - 2-й аргумент
-    mov     rax, [.ppol]      ; адрес треугольника
+    mov     rax, [.ppol]        ; адрес треугольника
     mov     edx, [rax]          ; r
     mov     ecx, [rax+4]        ; phi
     movsd   xmm0, [.p]
@@ -151,38 +151,81 @@ ret
 global OutNumber
 OutNumber:
 section .data
+    .outfmt  db "%d: ", 0
     .erNumber db "Incorrect number!",10,0
+section .bss
+    .numNumber  resq   1
+    .pnum       resq   1
+    .FILE       resq   1
 section .text
 push rbp
 mov rbp, rsp
 
+    mov [.numNumber], rdx
+    mov [.pnum], rdi
+    mov [.FILE], rsi
+
     ; В rdi адрес фигуры
     mov eax, [rdi]
     cmp eax, [COMPLEX]
-    je compOut
+    je .compOut
     cmp eax, [FRACTION]
-    je fracOut
+    je .fracOut
     cmp eax, [POLAR]
-    je polOut
+    je .polOut
     mov rdi, .erNumber
     mov rax, 0
+    mov edx, -1
+    ;call fprintf
+    jmp  .return
+.compOut:
+    mov rdi, [.FILE]
+    mov rsi, .outfmt
+    mov rdx, [.numNumber]
+    xor rax, rax
     call fprintf
-    jmp     return
-compOut:
+
+    mov rsi, [.FILE]
+    mov rdi, [.pnum]
+
     ; Вывод комплексного числа
     add     rdi, 4
+    inc edx
+    mov [.numNumber], rdx
+
     call    OutComplex
-    jmp     return
-fracOut:
+    jmp     .return
+.fracOut:
+    mov rdi, [.FILE]
+    mov rsi, .outfmt
+    mov edx, [.numNumber]
+    xor rax, rax
+    call fprintf
+
+    mov rsi, [.FILE]
+    mov rdi, [.pnum]
     ; Вывод дроби
     add     rdi, 4
+    inc edx
+    mov [.numNumber], edx
     call    OutFraction
-    jmp     return
-polOut:
+    jmp     .return
+.polOut:
+    mov rdi, [.FILE]
+    mov rsi, .outfmt
+    mov edx, [.numNumber]
+    xor rax, rax
+    call fprintf
+
+    mov rsi, [.FILE]
+    mov rdi, [.pnum]
+
     ; Вывод полярной координаты
     add     rdi, 4
+    inc edx
+    mov [.numNumber], edx
     call    OutPolar
-return:
+.return:
 leave
 ret
 
@@ -192,7 +235,7 @@ ret
 global OutContainer
 OutContainer:
 section .data
-    numFmt  db  "%d: ",0
+    .numFmt  db  "%d: ",0
 section .bss
     .pcont  resq    1   ; адрес контейнера
     .len    resd    1   ; адрес для сохранения числа введенных элементов
@@ -201,42 +244,40 @@ section .text
 push rbp
 mov rbp, rsp
 
-    mov [.pcont], rdi    ; сохраняется указатель на контейнер
-    mov [.len],   esi    ; сохраняется число элементов
+    mov [.pcont], rdi   ; сохраняется указатель на контейнер
+    mov [.len],   esi     ; сохраняется число элементов
     mov [.FILE],  rdx    ; сохраняется указатель на файл
 
     ; В rdi адрес начала контейнера
     mov rbx, rsi            ; число чисел
-    xor ecx, ecx            ; счетчик фигур = 0
+    xor ecx, ecx            ; счетчик чисел = 0
+    xor edx, edx
     mov rsi, rdx            ; перенос указателя на файл
 .loop:
     cmp ecx, ebx            ; проверка на окончание цикла
     jge .return             ; Перебрали все числа
-
     push rbx
     push rcx
 
-    ; Вывод номера числа
-    mov     rdi, [.FILE]    ; текущий указатель на файл
-    mov     rsi, numFmt     ; формат для вывода числа
-    mov     edx, ecx        ; индекс текущего числа
-    xor     rax, rax,       ; только целочисленные регистры
-    call fprintf
-
-    ; Вывод текущего числа
+    ; Вывод текущей фигуры
+    mov     edx, ecx
     mov     rdi, [.pcont]
     mov     rsi, [.FILE]
-    call OutNumber     ; Получение периметра первого числа
+    call OutNumber     ; Получение вещественного значения
 
     pop rcx
     pop rbx
+    cmp edx, -1
+    je .nextNumber
+    jmp .incIndex
+.incIndex:
     inc ecx                 ; индекс следующего числа
-
+    jmp .nextNumber
+.nextNumber:
     mov     rax, [.pcont]
-    add     rax, 16         ; адрес следующего числа
+    add     rax, 32         ; адрес следующего числа
     mov     [.pcont], rax
     jmp .loop
 .return:
 leave
 ret
-

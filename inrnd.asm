@@ -35,7 +35,7 @@ leave
 ret
 
 ;----------------------------------------------
-; Случайный ввод параметров прямоугольника
+; Случайный ввод параметров комплексного числа
 ;----------------------------------------------
 global InRndComplex
 InRndComplex:
@@ -121,7 +121,7 @@ ret
 global InRndNmber
 InRndNumber:
 section .data
-    .rndNumFmt       db "Random number = %d",10,0
+    .keys       dq 3
 section .bss
     .pnum       resq    1   ; адрес числа
     .key        resd    1   ; ключ
@@ -131,11 +131,14 @@ mov rbp, rsp
 
     ; В rdi адрес числа
     mov [.pnum], rdi
-
+    
     ; Формирование признака числа
-    xor     rax, rax    ;
+    xor     eax, eax    ;
     call    rand        ; запуск генератора случайных чисел
-    and     eax, 1      ; очистка результата кроме младшего разряда (0 или 1)
+    
+    xor     edx, edx
+    idiv    qword[.keys]
+    mov     eax, edx      ; очистка результата кроме младшего разряда (0 или 1)
     inc     eax         ; фомирование признака числа (1 или 2 или 3)
 
     ;mov     [.key], eax
@@ -211,7 +214,7 @@ mov rbp, rsp
     inc rbx
 
     pop rdi
-    add rdi, 16             ; адрес следующего числа
+    add rdi, 32            ; адрес следующего числа
 
     jmp .loop
 .return:

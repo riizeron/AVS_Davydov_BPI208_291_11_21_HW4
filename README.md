@@ -49,25 +49,31 @@ The initial data for testing is contained in the `output` directory.
 ## Required metrics that determine the characteristics of the program, for various test runs.
 
 > The program contains 0 interface modules (header files) and 7 implementation modules (files with the definition of software objects):
-> * delete.asm - 2.89 KB
-> * inRnd.asm - 8.13 KB
-> * input.asm - 9.96 KB
-> * output.asm - 9.55 KB
-> * main.asm - 8.21 KB
-> * real.asm - 5.44 KB
-> * macrosmac - 4.58 KB
->Total size of sources: 49.2 KB
+> * delete.asm - 2.46 KB
+> * inrnd.asm - 6.50 KB
+> * input.asm - 7.56 KB
+> * output.asm - 9.49 KB
+> * main.asm - 7.60 KB
+> * real.asm - 4.23 KB
+> * macros.mac - 4.71 KB
+>Total size of sources: 42.5 KB
 
 
 ## Compilation
 
 ```
 $ make
-_Then:_
-$ ./task -f input.txt output01.txt output2.txt _- for file input_
-_or:_
-$ ./task -n 1000 output01.txt output2.txt _- for random input_
 ```
+_Then:_
+```
+$ ./task -f input.txt output01.txt output2.txt
+```
+_- for file input_
+_or:_
+```
+$ ./task -n 1000 output01.txt output2.txt
+```
+_- for random generated input_
 
 ### Statistics of different approaches
 

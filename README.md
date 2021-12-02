@@ -149,6 +149,11 @@ run faster and take up significantly less memory.
 can only be obtained using Assembler. Please note that an __assembler__ program can be written in any editor!
 
 
+## _Additional_
+
+_Additional tasks were implemented: modular structure, explanatory comments and handling incorrect numbers
+in the input data_
+
 __*__ More detail:
 
 ```

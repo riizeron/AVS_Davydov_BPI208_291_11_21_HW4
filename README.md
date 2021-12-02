@@ -60,8 +60,8 @@ The initial data for testing is contained in the `output` directory.
 
 | Metric | Value |
 | :---: | --- |
-| The total size of the source code of the program | 17.211 KB |
-| Release build executable size (GCC, Linux)__*__ | 32.12 KB |
+| The total size of the source code of the program | 42.5 KB |
+| Release build executable size (GCC, Linux)__*__ | 32.8 KB |
 
 ## Compilation
 

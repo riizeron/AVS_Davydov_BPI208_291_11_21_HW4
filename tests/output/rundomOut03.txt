@@ -1,0 +1,41 @@
+Filled container:
+Container contains 23 elements.
+1: It is Complex: x = 11.000000*, y = 16.000000*. Real = 19.416488*
+2: It is Complex: x = 15.000000*, y = 18.000000*. Real = 23.430749*
+3: It is Complex: x = 9.000000*, y = 16.000000*. Real = 18.357560*
+4: It is Fraction: a = 2, b = 16. Real = 0.125000
+5: It is Complex: x = 19.000000*, y = 5.000000*. Real = 19.646883*
+6: It is Fraction: a = 8, b = 10. Real = 0.800000
+7: It is Fraction: a = 19, b = 11. Real = 1.727273
+8: It is Complex: x = 11.000000*, y = 20.000000*. Real = 22.825424*
+9: It is Complex: x = 12.000000*, y = 17.000000*. Real = 20.808652*
+10: It is Complex: x = 18.000000*, y = 8.000000*. Real = 19.697716*
+11: It is Complex: x = 9.000000*, y = 8.000000*. Real = 12.041595*
+12: It is Complex: x = 14.000000*, y = 4.000000*. Real = 14.560220*
+13: It is Complex: x = 17.000000*, y = 8.000000*. Real = 18.788294*
+14: It is Polar: a = 13, b = 18. Real = 13.000000
+15: It is Complex: x = 7.000000*, y = 20.000000*. Real = 21.189620*
+16: It is Polar: a = 18, b = 2. Real = 18.000000
+17: It is Complex: x = 6.000000*, y = 6.000000*. Real = 8.485281*
+18: It is Fraction: a = 16, b = 16. Real = 1.000000
+19: It is Fraction: a = 5, b = 7. Real = 0.714286
+20: It is Polar: a = 13, b = 7. Real = 13.000000
+21: It is Polar: a = 6, b = 14. Real = 6.000000
+22: It is Polar: a = 12, b = 9. Real = 12.000000
+23: It is Complex: x = 18.000000*, y = 20.000000*. Real = 26.907248*
+Real average = 13.587926
+
+New container:
+Container contains 12 elements.
+1: It is Complex: x = 11.000000*, y = 16.000000*. Real = 19.416488*
+2: It is Complex: x = 15.000000*, y = 18.000000*. Real = 23.430749*
+3: It is Complex: x = 9.000000*, y = 16.000000*. Real = 18.357560*
+4: It is Complex: x = 19.000000*, y = 5.000000*. Real = 19.646883*
+5: It is Complex: x = 11.000000*, y = 20.000000*. Real = 22.825424*
+6: It is Complex: x = 12.000000*, y = 17.000000*. Real = 20.808652*
+7: It is Complex: x = 18.000000*, y = 8.000000*. Real = 19.697716*
+8: It is Complex: x = 14.000000*, y = 4.000000*. Real = 14.560220*
+9: It is Complex: x = 17.000000*, y = 8.000000*. Real = 18.788294*
+10: It is Complex: x = 7.000000*, y = 20.000000*. Real = 21.189620*
+11: It is Polar: a = 18, b = 2. Real = 18.000000
+12: It is Complex: x = 18.000000*, y = 20.000000*. Real = 26.907248*

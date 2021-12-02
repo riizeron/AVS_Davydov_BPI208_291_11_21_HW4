@@ -1,0 +1,40 @@
+Filled container:
+Container contains 23 elements.
+1: It is Polar: a = 14, b = 6. Real = 14.000000
+2: It is Fraction: a = 15, b = 5. Real = 3.000000
+3: It is Complex: x = 1.000000, y = 18.000000. Real = 18.027756
+4: It is Complex: x = 12.000000, y = 19.000000. Real = 22.472205
+5: It is Complex: x = 2.000000, y = 2.000000. Real = 2.828427
+6: It is Complex: x = 12.000000, y = 3.000000. Real = 12.369317
+7: It is Complex: x = 11.000000, y = 7.000000. Real = 13.038405
+8: It is Polar: a = 16, b = 16. Real = 16.000000
+9: It is Fraction: a = 1, b = 13. Real = 0.076923
+10: It is Fraction: a = 14, b = 15. Real = 0.933333
+11: It is Complex: x = 5.000000, y = 1.000000. Real = 5.099020
+12: It is Complex: x = 11.000000, y = 14.000000. Real = 17.804494
+13: It is Fraction: a = 12, b = 16. Real = 0.750000
+14: It is Fraction: a = 19, b = 10. Real = 1.900000
+15: It is Fraction: a = 6, b = 8. Real = 0.750000
+16: It is Complex: x = 20.000000, y = 8.000000. Real = 21.540659
+17: It is Polar: a = 15, b = 4. Real = 15.000000
+18: It is Polar: a = 6, b = 3. Real = 6.000000
+19: It is Fraction: a = 16, b = 9. Real = 1.777778
+20: It is Fraction: a = 9, b = 6. Real = 1.500000
+21: It is Complex: x = 5.000000, y = 19.000000. Real = 19.646883
+22: It is Complex: x = 9.000000, y = 16.000000. Real = 18.357560
+23: It is Polar: a = 6, b = 3. Real = 6.000000
+Real average = 9.516207
+
+New container:
+Container contains 11 elements.
+1: It is Polar: a = 14, b = 6. Real = 14.000000
+2: It is Complex: x = 1.000000, y = 18.000000. Real = 18.027756
+3: It is Complex: x = 12.000000, y = 19.000000. Real = 22.472205
+4: It is Complex: x = 12.000000, y = 3.000000. Real = 12.369317
+5: It is Complex: x = 11.000000, y = 7.000000. Real = 13.038405
+6: It is Polar: a = 16, b = 16. Real = 16.000000
+7: It is Complex: x = 11.000000, y = 14.000000. Real = 17.804494
+8: It is Complex: x = 20.000000, y = 8.000000. Real = 21.540659
+9: It is Polar: a = 15, b = 4. Real = 15.000000
+10: It is Complex: x = 5.000000, y = 19.000000. Real = 19.646883
+11: It is Complex: x = 9.000000, y = 16.000000. Real = 18.357560

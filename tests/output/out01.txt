@@ -1,0 +1,11 @@
+Filled container:
+Container contains 3 elements.
+1: It is Complex: x = 2.000000, y = 3.000000. Real = 3.605551
+2: It is Fraction: a = 5, b = 9. Real = 0.555556
+3: It is Polar: a = 5, b = 180. Real = 5.000000
+Real average = 3.053702
+
+New container:
+Container contains 2 elements.
+1: It is Complex: x = 2.000000, y = 3.000000. Real = 3.605551
+2: It is Polar: a = 5, b = 180. Real = 5.000000

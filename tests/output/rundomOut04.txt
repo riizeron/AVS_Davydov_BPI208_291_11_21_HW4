@@ -1,0 +1,40 @@
+Filled container:
+Container contains 23 elements.
+1: It is Polar: a = 7, b = 19. Real = 7
+2: It is Complex: x = 	6	, y = 	8	. Real = 	10	
+3: It is Polar: a = 11, b = 6. Real = 11
+4: It is Polar: a = 1, b = 17. Real = 1
+5: It is Polar: a = 3, b = 14. Real = 3
+6: It is Polar: a = 13, b = 6. Real = 13
+7: It is Fraction: a = 9, b = 11. Real = 0.818182
+8: It is Complex: x = 	20	, y = 	4	. Real = 	20.3961	
+9: It is Polar: a = 12, b = 19. Real = 12
+10: It is Complex: x = 	6	, y = 	6	. Real = 	8.48528	
+11: It is Fraction: a = 4, b = 13. Real = 0.307692
+12: It is Fraction: a = 9, b = 4. Real = 2.25
+13: It is Fraction: a = 6, b = 13. Real = 0.461538
+14: It is Fraction: a = 9, b = 8. Real = 1.125
+15: It is Polar: a = 13, b = 4. Real = 13
+16: It is Complex: x = 	5	, y = 	17	. Real = 	17.72	
+17: It is Fraction: a = 9, b = 6. Real = 1.5
+18: It is Fraction: a = 8, b = 18. Real = 0.444444
+19: It is Complex: x = 	7	, y = 	1	. Real = 	7.07107	
+20: It is Polar: a = 14, b = 7. Real = 14
+21: It is Complex: x = 	6	, y = 	6	. Real = 	8.48528	
+22: It is Polar: a = 4, b = 15. Real = 4
+23: It is Complex: x = 	14	, y = 	18	. Real = 	22.8035	
+Real average = 7.820353
+
+New container:
+Container contains 11 elements.
+1: It is Complex: x = 	6	, y = 	8	. Real = 	10	
+2: It is Polar: a = 11, b = 6. Real = 11
+3: It is Polar: a = 13, b = 6. Real = 13
+4: It is Complex: x = 	20	, y = 	4	. Real = 	20.3961	
+5: It is Polar: a = 12, b = 19. Real = 12
+6: It is Complex: x = 	6	, y = 	6	. Real = 	8.48528	
+7: It is Polar: a = 13, b = 4. Real = 13
+8: It is Complex: x = 	5	, y = 	17	. Real = 	17.72	
+9: It is Polar: a = 14, b = 7. Real = 14
+10: It is Complex: x = 	6	, y = 	6	. Real = 	8.48528	
+11: It is Complex: x = 	14	, y = 	18	. Real = 	22.8035	

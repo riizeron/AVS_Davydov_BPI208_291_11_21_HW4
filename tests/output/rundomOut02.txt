@@ -1,0 +1,39 @@
+Filled container:
+Container contains 23 elements.
+1: It is Polar: a = 20, b = 12. Real = 20.000000
+2: It is Polar: a = 7, b = 16. Real = 7.000000
+3: It is Polar: a = 6, b = 7. Real = 6.000000
+4: It is Fraction: a = 11, b = 10. Real = 1.100000
+5: It is Polar: a = 15, b = 10. Real = 15.000000
+6: It is Fraction: a = 11, b = 1. Real = 11.000000
+7: It is Polar: a = 18, b = 8. Real = 18.000000
+8: It is Complex: x = 10.000000, y = 13.000000. Real = 16.401219
+9: It is Complex: x = 4.000000, y = 6.000000. Real = 7.211103
+10: It is Complex: x = 7.000000, y = 14.000000. Real = 15.652476
+11: It is Complex: x = 3.000000, y = 11.000000. Real = 11.401754
+12: It is Complex: x = 11.000000, y = 19.000000. Real = 21.954498
+13: It is Complex: x = 2.000000, y = 10.000000. Real = 10.198039
+14: It is Complex: x = 2.000000, y = 11.000000. Real = 11.180340
+15: It is Fraction: a = 7, b = 6. Real = 1.166667
+16: It is Complex: x = 9.000000, y = 10.000000. Real = 13.453624
+17: It is Polar: a = 10, b = 11. Real = 10.000000
+18: It is Polar: a = 4, b = 13. Real = 4.000000
+19: It is Fraction: a = 11, b = 3. Real = 3.666667
+20: It is Complex: x = 7.000000, y = 5.000000. Real = 8.602325
+21: It is Polar: a = 20, b = 14. Real = 20.000000
+22: It is Complex: x = 6.000000, y = 9.000000. Real = 10.816654
+23: It is Complex: x = 6.000000, y = 14.000000. Real = 15.231546
+Real average = 11.262474
+
+New container:
+Container contains 10 elements.
+1: It is Polar: a = 20, b = 12. Real = 20.000000
+2: It is Polar: a = 15, b = 10. Real = 15.000000
+3: It is Polar: a = 18, b = 8. Real = 18.000000
+4: It is Complex: x = 10.000000, y = 13.000000. Real = 16.401219
+5: It is Complex: x = 7.000000, y = 14.000000. Real = 15.652476
+6: It is Complex: x = 3.000000, y = 11.000000. Real = 11.401754
+7: It is Complex: x = 11.000000, y = 19.000000. Real = 21.954498
+8: It is Complex: x = 9.000000, y = 10.000000. Real = 13.453624
+9: It is Polar: a = 20, b = 14. Real = 20.000000
+10: It is Complex: x = 6.000000, y = 14.000000. Real = 15.231546

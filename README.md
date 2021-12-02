@@ -1,3 +1,4 @@
+
 # Fourth homework
 
 ## Task: Various numbers,Variant 291 (11, 21)
@@ -7,9 +8,9 @@
 ## Task
 
 >Various numbers
-> * 1. Complex (real and imaginary parts - a pair of real numbers)
-> * 2. Simple fractions (numerator, denominator - a pair of integers)
-> * 3. Polar coordinates (angle [radian] - real; coordinates of the end point on the plane
+> * 1 Complex (real and imaginary parts - a pair of real numbers)
+> * 2 Simple fractions (numerator, denominator - a pair of integers)
+> * 3 Polar coordinates (angle [radian] - real; coordinates of the end point on the plane
 
 ------
 

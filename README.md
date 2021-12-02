@@ -47,7 +47,7 @@ container while maintaining order.
 
 The initial data for testing is contained in the `output` directory.
 
-#### Tests explanation
+### Tests explanation
 
 >#### _Number index is a digit between 1 and 3 where:_
 > * _1 - it is a complex number that has two parameters:_

@@ -4,7 +4,7 @@
 ## Task: Various numbers, variant 291 (11, 21)
 
 ### Autor: Davydov Vyacheslav Olegovich
-## _BPI208 group_
+#### _BPI208 group_
 
 ## Task
 
@@ -85,35 +85,46 @@ _- for random generated input_
 
 Program runtime on different sizes of input data:
 
-Number of numbers | Running time, seconds | Memory consumed, KB
---- | --- | --- 
-`7` | < `0.002` | `~2750`
-`100` | < `0.01` | `~2892`
-`1000` | `0.01` | `~3674`
-`5000` | `0.15` | `~4622`
+Number of numbers | Running time, seconds | 
+--- | --- 
+`10` | < `0.04`
+`100` | < `0.11`
+`1000` | `0.38`
+`5000` | `1.35`
 
 
 ## Object Oriented (C++)
 
 Program runtime on different sizes of input data:
 
-Number of numbers | Running time, seconds | Memory consumed, KB
---- | --- | --- 
-`7` | < `0.001` | `~2600`
-`100` | < `0.01` | `~2800`
-`1000` | `0.01` | `~3500`
-`5000` | `0.14` | `~4150`
+Number of numbers | Running time, seconds | 
+--- | --- 
+`10` | < `0.004`
+`100` | < `0.006`
+`1000` | `0.04`
+`5000` | `0.26`
 
 ## Dynamic typing (Python)
 
 Program runtime on different sizes of input data:
 
-Number of numbers | Running time, seconds | Memory consumed, KB
---- | --- | --- 
-`10` | `Source: 0.002 Sort: 0.002` | `~4420`
-`100` | `Source: 0.005 Sort: 0.023` | `~5650`
-`1000` | `Source: 0.038 Sort: 1.911` | `~8652`
-`5000` | `Source: 0.069 Sort: 2.233` | `~10841`
+Number of numbers | Running time, seconds | 
+--- | --- 
+`10` | < `0.006`
+`100` | < `0.02`
+`1000` | `0.2`
+`5000` | `1.27`
+
+## _Assembly_
+
+Program runtime on different sizes of input data:
+
+Number of numbers | Running time, seconds
+--- | ---
+`10` | < `0.007`
+`100` | < `0.0116`
+`1000` | `0.019`
+`5000` | `0.13`
 
 ---
 ## Difference between procedural, object-oriented, dynamic typing with an assembly program

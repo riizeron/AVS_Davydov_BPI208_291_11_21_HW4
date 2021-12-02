@@ -52,15 +52,15 @@ The initial data for testing is contained in the `output` directory.
 > * _1 - it is a complex number that has two parameters:_
 >> * _x - real part_
 >> * _y - imaginary part_
->>  real value of this number count according to formula: sqrt(x^2+y^2)
+>> * real value of this number count according to formula: sqrt(x^2+y^2)
 > * _2 - it is a fraction. It has a parameters named:_
 >> * _a - a numerator_
 >> * _b - a denominator_
->>  real value can be retrived by division parametr a on b
+>> * real value can be retrived by division parametr a on b
 > * _3 - it is a polar coordinate. It has:_
 >> * _r - radius_
 >> * _phi - angle_
->>  _It's real value is just parametr r
+>> * It's real value is just parametr r
 
 ## Required metrics that determine the characteristics of the program, for various test runs.
 

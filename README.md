@@ -85,10 +85,12 @@ _- for random generated input_
 
 Program runtime on different sizes of input data:
 
+_Memory: 16.2 KB_ 
+
 Number of numbers | Running time, seconds | 
 --- | --- 
-`10` | < `0.04`
-`100` | < `0.11`
+`10` | `0.04`
+`100` | `0.11`
 `1000` | `0.38`
 `5000` | `1.35`
 
@@ -97,10 +99,12 @@ Number of numbers | Running time, seconds |
 
 Program runtime on different sizes of input data:
 
+_Memory: 16.7 KB_ 
+
 Number of numbers | Running time, seconds | 
 --- | --- 
-`10` | < `0.004`
-`100` | < `0.006`
+`10` | `0.004`
+`100` | `0.006`
 `1000` | `0.04`
 `5000` | `0.26`
 
@@ -108,16 +112,20 @@ Number of numbers | Running time, seconds |
 
 Program runtime on different sizes of input data:
 
+_Memory: 7.29 KB_ 
+
 Number of numbers | Running time, seconds | 
 --- | --- 
-`10` | < `0.006`
-`100` | < `0.02`
+`10` | `0.006`
+`100` | `0.02`
 `1000` | `0.2`
 `5000` | `1.27`
 
 ## _Assembly_
 
 Program runtime on different sizes of input data:
+
+_Memory: 42.5 KB_ 
 
 Number of numbers | Running time, seconds
 --- | ---

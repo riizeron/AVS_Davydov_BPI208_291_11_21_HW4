@@ -47,6 +47,20 @@ container while maintaining order.
 
 The initial data for testing is contained in the `output` directory.
 
+###_Test explanation_
+> _Number index is a digit between 1 and 3 where:_
+> * _1 - it is a complex number that has two parameters:_
+>> * _x - real part and y - imaginary part
+>> * _real value of this number count according to formula: sqrt(x^2+y^2)
+> * _2 - it is a fraction. It has a parameters named:_
+>> * _a - a numerator
+>> * _b - a denominator
+>> * _real value can be retrived by division parametr a on b_
+> * _3 - it is a polar coordinate. It has:_
+>> * _r - radius_
+>> * _phi - angle_
+>> * _It's real value is just parametr r_
+
 ## Required metrics that determine the characteristics of the program, for various test runs.
 
 > The program contains 0 interface modules (header files) and 7 implementation modules (files with the definition of software objects):
@@ -147,6 +161,11 @@ run faster and take up significantly less memory.
 >
 >> Second, access to many hardware resources
 can only be obtained using Assembler. Please note that an __assembler__ program can be written in any editor!
+
+> As a result we get that:
+> * The program, written in NASM, is significantly faster than the previous three programs.
+> * The original texts, compared to previous homework, take up much
+more memory, which may be due to the fact that the code on NASM turns out to be very voluminous
 
 
 ### _Additional functionality_

@@ -1,12 +1,12 @@
 # Fourth homework
 
-## Задача: , Вариант 291 (11, 21)
+## Task: Various numbers,Variant 291 (11, 21)
 
 ### Autor: Davydov Vyacheslav Olegovich
 
 ## Task
 
-> Various numbers
+>Various numbers
 > * 1. Complex (real and imaginary parts - a pair of real numbers)
 > * 2. Simple fractions (numerator, denominator - a pair of integers)
 > * 3. Polar coordinates (angle [radian] - real; coordinates of the end point on the plane
@@ -20,15 +20,15 @@ Converting each value to a real number equivalent to the written one. For exampl
 
 ### Basic alternatives
 
-> _Процедурные_
->> * наличие, отсутствие абстрактных типов данных – булевская величина
+> _Procedural_
+>> * presence, absence of abstract data types - boolean
 
-> _Объектно-ориентированные_
->> * наследование: одинарное, множественное, интерфейса – перечислимый тип
+> _Object-oriented_
+>> * inheritance: single, multiple, interface - enumerated
 
-> _Функциональные_
->> * типизация – перечислимый тип = строгая, динамическая
->> * поддержка «ленивых» вычислений – булевский тип
+> _Functional_
+>> * typing - enumerated type = strong, dynamic
+>> * lazy evaluation support - boolean
 
 ### Functional
 

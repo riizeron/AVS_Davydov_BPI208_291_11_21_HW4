@@ -46,11 +46,31 @@ container while maintaining order.
 
 The initial data for testing is contained in the `output` directory.
 
-File with test results `output / reports.txt`
+## Required metrics that determine the characteristics of the program, for various test runs.
+
+> The program contains 0 interface modules (header files) and 7 implementation modules (files with the definition of software objects):
+> * delete.asm - 2.89 KB
+> * inRnd.asm - 8.13 KB
+> * input.asm - 9.96 KB
+> * output.asm - 9.55 KB
+> * main.asm - 8.21 KB
+> * real.asm - 5.44 KB
+> * macrosmac - 4.58 KB
+>Total size of sources: 49.2 KB
+
+
+## Compilation
 
 ```
-$ sh compilefile.sh
+$ make
+_Then:_
+$ ./task -f input.txt output01.txt output2.txt _- for file input_
+_or:_
+$ ./task -n 1000 output01.txt output2.txt _- for random input_
 ```
+
+### Statistics of different approaches
+
 ## Procedural (C ++)
 
 Program runtime on different sizes of input data:

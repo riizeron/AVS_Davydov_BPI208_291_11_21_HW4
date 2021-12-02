@@ -58,10 +58,10 @@ The initial data for testing is contained in the `output` directory.
 > * real.asm - 4.23 KB
 > * macros.mac - 4.71 KB
 
-| Метрика | Значение |
+| Metric | Value |
 | :---: | --- |
-| Общий размер исходных текстов программы | 17.211 KB |
-| Размер исполняемого файла релизной сборки (GCC, Linux)__*__ | 32.12 KB |
+| The total size of the source code of the program | 17.211 KB |
+| Release build executable size (GCC, Linux)__*__ | 32.12 KB |
 
 ## Compilation
 
@@ -138,7 +138,7 @@ gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Copyright (C) 2019 Free Software Foundation, Inc.
 ```
 ```
-nasm --version
+nasm --version:
 NASM version 2.14.02
 ```
 ```
@@ -154,18 +154,6 @@ uname -a:
 Linux riizeron 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-CPU:
+CPU: 
 Intel(R) Pentium(R) Silver N5000 CPU @ 1.10GHz
-
-
-
-
-## Метрики, определяющие характеристики программы:
-
-| Метрика | Значение |
-| :---: | --- |
-| Общий размер исходных текстов программы | 17.211 KB |
-| Размер исполняемого файла релизной сборки (GCC, Linux)__*__ | 32.12 KB |
-
-
 

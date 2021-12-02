@@ -50,16 +50,17 @@ The initial data for testing is contained in the `output` directory.
 ###_Test explanation_
 > _Number index is a digit between 1 and 3 where:_
 > * _1 - it is a complex number that has two parameters:_
->> * _x - real part and y - imaginary part
->> * _real value of this number count according to formula: sqrt(x^2+y^2)
+>> * _x - real part_
+>> * _y - imaginary part_
+>> *##### _real value of this number count according to formula: sqrt(x^2+y^2)_
 > * _2 - it is a fraction. It has a parameters named:_
->> * _a - a numerator
->> * _b - a denominator
->> * _real value can be retrived by division parametr a on b_
+>> * _a - a numerator_
+>> * _b - a denominator_
+>> *##### _real value can be retrived by division parametr a on b_
 > * _3 - it is a polar coordinate. It has:_
 >> * _r - radius_
 >> * _phi - angle_
->> * _It's real value is just parametr r_
+>> *##### _It's real value is just parametr r_
 
 ## Required metrics that determine the characteristics of the program, for various test runs.
 

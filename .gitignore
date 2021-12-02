@@ -1,3 +1,15 @@
 .idea
 .vs
 build
+delete.o
+input.o
+inrnd.o
+main.o
+output.o
+real.o
+delete.lst
+input.lst
+inrnd.lst
+main.lst
+output.lst
+real.lst

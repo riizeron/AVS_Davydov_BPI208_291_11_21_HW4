@@ -1,9 +1,10 @@
 
 # Fourth homework
 
-## Task: Various numbers,Variant 291 (11, 21)
+## Task: Various numbers, variant 291 (11, 21)
 
 ### Autor: Davydov Vyacheslav Olegovich
+## _BPI208 group_
 
 ## Task
 
@@ -87,7 +88,6 @@ Number of numbers | Running time, seconds | Memory consumed, KB
 `100` | < `0.01` | `~2892`
 `1000` | `0.01` | `~3674`
 `5000` | `0.15` | `~4622`
-`10000` | `0.96` | `~4877`
 
 
 ## Object Oriented (C++)
@@ -100,7 +100,6 @@ Number of numbers | Running time, seconds | Memory consumed, KB
 `100` | < `0.01` | `~2800`
 `1000` | `0.01` | `~3500`
 `5000` | `0.14` | `~4150`
-`10000` | `0.90` | `~4625`
 
 ## Dynamic typing (Python)
 
@@ -112,7 +111,6 @@ Number of numbers | Running time, seconds | Memory consumed, KB
 `100` | `Source: 0.005 Sort: 0.023` | `~5650`
 `1000` | `Source: 0.038 Sort: 1.911` | `~8652`
 `5000` | `Source: 0.069 Sort: 2.233` | `~10841`
-`10000` | `Source: 0.423 Sort: 169.316` | `~20532`
 
 ---
 ## Difference between procedural, object-oriented, dynamic typing with an assembly program
@@ -128,12 +126,6 @@ run faster and take up significantly less memory.
 >> Second, access to many hardware resources
 can only be obtained using Assembler. Please note that an __assembler__ program can be written in any editor!
 
-## Metrics that define the characteristics of the program:
-
-| Metric | Value |
-| : ---: | --- |
-| The total size of the source code of the program | 17.211 KB |
-| The size of the release build executable file (GCC, Linux) __ * __ | 32.12 KB |
 
 __ * __ Versions in more detail:
 
@@ -141,19 +133,23 @@ __ * __ Versions in more detail:
 gcc --version:
 gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Copyright (C) 2019 Free Software Foundation, Inc.
-
+```
+```
 nasm --version
 NASM version 2.14.02
-
-Processor:
-Intel(R) Pentium(R) Silver N5000 CPU @ 1.10GHz
-
+```
+```
 lsb_release -a:
 No LSB modules are available.
 Distributor ID: Ubuntu
 Description:    Ubuntu 20.04 LTS
 Release:        20.04
 Codename:       focal
-
+```
+```
 uname -a:
 Linux riizeron 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+CPU:
+Intel(R) Pentium(R) Silver N5000 CPU @ 1.10GHz

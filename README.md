@@ -57,8 +57,11 @@ The initial data for testing is contained in the `output` directory.
 > * main.asm - 7.60 KB
 > * real.asm - 4.23 KB
 > * macros.mac - 4.71 KB
->Total size of sources: 42.5 KB
 
+| Метрика | Значение |
+| :---: | --- |
+| Общий размер исходных текстов программы | 17.211 KB |
+| Размер исполняемого файла релизной сборки (GCC, Linux)__*__ | 32.12 KB |
 
 ## Compilation
 
@@ -127,7 +130,7 @@ run faster and take up significantly less memory.
 can only be obtained using Assembler. Please note that an __assembler__ program can be written in any editor!
 
 
-__ * __ Versions in more detail:
+__*__ More detail:
 
 ```
 gcc --version:
@@ -153,3 +156,16 @@ Linux riizeron 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2
 
 CPU:
 Intel(R) Pentium(R) Silver N5000 CPU @ 1.10GHz
+
+
+
+
+## Метрики, определяющие характеристики программы:
+
+| Метрика | Значение |
+| :---: | --- |
+| Общий размер исходных текстов программы | 17.211 KB |
+| Размер исполняемого файла релизной сборки (GCC, Linux)__*__ | 32.12 KB |
+
+
+

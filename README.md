@@ -57,7 +57,7 @@ The initial data for testing is contained in the `output` directory.
 > * _2 - it is a fraction. It has a parameters named:_
 >> * _a - a numerator_
 >> * _b - a denominator_
->> * #### _real value can be retrived by division parametr a on b-
+>> * #### _real value can be retrived by division parametr a on b_
 > * _3 - it is a polar coordinate. It has:_
 >> * _r - radius_
 >> * _phi - angle_
